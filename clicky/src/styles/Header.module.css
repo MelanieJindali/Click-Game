@@ -1,0 +1,5 @@
+.header {
+  background-color: #d3f5c0;
+  padding: 2rem;
+  grid-column: 1 / 4;
+}

@@ -1,0 +1,4 @@
+.main {
+  display: grid;
+  grid-template: auto 1ft auto / auto 1fr auto;
+}
