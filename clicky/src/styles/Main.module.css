@@ -1,4 +1,5 @@
 .main {
   display: grid;
-  grid-template: auto 1ft auto / auto 1fr auto;
+  place-items: center;
+  grid-template: auto 1fr auto / auto 1fr auto;
 }
