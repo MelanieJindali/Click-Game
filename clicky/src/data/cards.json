@@ -1,14 +1,32 @@
 [
   {
     "id": 1,
-    "alt": "Plant 1",
-    "image": "https://images.pexels.com/photos/912413/pexels-photo-912413.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "alt": "Char 1",
+    "image": "https://pm1.narvii.com/7060/c0f21f5ee6e0f9dff1d677ce423d57b35ebbbffcr1-738-1083v2_uhq.jpg",
     "clicked": false
   },
   {
     "id": 2,
-    "alt": "Plant 2",
-    "image": "https://images.pexels.com/photos/1974508/pexels-photo-1974508.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "alt": "Char 2",
+    "image": "https://vignette.wikia.nocookie.net/teentitans/images/9/96/312.png/revision/latest?cb=20180707015810",
+    "clicked": false
+  },
+  {
+    "id": 3,
+    "alt": "Char 3",
+    "image": "https://i.pinimg.com/474x/e6/2d/b0/e62db035902b8ebf24fdf799dd60a6f0.jpg",
+    "clicked": false
+  },
+  {
+    "id": 4,
+    "alt": "Char 4",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSaeQItWBjylflMkEOGCr7hnuoh29WLUbIqUQ&usqp=CAU",
+    "clicked": false
+  },
+  {
+    "id": 5,
+    "alt": "Char 5",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTV9-T4w3npddmSQ1ur7cp5d3nLPGs2t8BN3w&usqp=CAU",
     "clicked": false
   }
 ]

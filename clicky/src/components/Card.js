@@ -4,10 +4,8 @@ import styles from '../styles/ImageCard.module.css'
 const Card = ({ handleClick, id, image, alt }) => {
 
   return (
-    <div onClick={handleClick}>
-      <div className={styles.card}>
-        <img key={id} src={image} alt={alt} />
-      </div>
+    <div className={styles.container} onClick={handleClick}>
+      <img className={styles.card} key={id} src={image} alt={alt}/>
     </div>
   );
 };
