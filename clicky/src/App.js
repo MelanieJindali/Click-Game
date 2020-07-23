@@ -35,13 +35,11 @@ class App extends Component {
       this.setState({score: this.state.score + 1})
 
       if (this.state.score > this.state.highscore) {
-        this.state.highscore = this.state.score;
-        this.setState({ highscore: this.state.highscore })
+        this.setState({ highscore: this.state.score })
       }
 
       clickedCard.sort((a, b) => 0.5 - Math.random());
       this.setState({ clickedCards: clickedCard })
-      this.state.highscore = this.state.score;
     }
    
   }
