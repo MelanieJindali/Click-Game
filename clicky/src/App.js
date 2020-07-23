@@ -9,8 +9,42 @@ class App extends Component {
     cards,
     score: 0,
     highscore: 0,
-    clickedCards: []
+    clickedCards: [],
+    gameMessage: ""
   };
+
+  handleClick = id => {
+
+    const cards = this.state.cards;
+    // Filter clicked card by id
+    const clickedCard = cards.filter(card => card.id === id);
+    
+    if (clickedCard.clicked) {
+    for (let i = 0 ; i < clickedCard.length ; i++){
+      clickedCard[i].clicked = false;
+    }
+
+    this.setState({cards})
+    this.setState({score: 0})
+    this.setState({clickedCards: clickedCard})
+    
+  } else if (this.state.score < 11) {
+    
+      clickedCard.clicked = true;
+      
+      this.setState({score: this.state.score + 1})
+
+      if (this.state.score > this.state.highscore) {
+        this.state.highscore = this.state.score;
+        this.setState({ highscore: this.state.highscore })
+      }
+
+      clickedCard.sort((a, b) => 0.5 - Math.random());
+      this.setState({ clickedCards: clickedCard })
+      this.state.highscore = this.state.score;
+    }
+   
+  }
 
   render() {
     return (
