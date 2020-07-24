@@ -14,35 +14,26 @@ class App extends Component {
   };
 
   handleClick = id => {
+    const clicked = this.state.clickedCards;
 
-    const cards = this.state.cards;
-    // Filter clicked card by id
-    const clickedCard = cards.filter(card => card.id === id);
-    
-    if (clickedCard.clicked) {
-    for (let i = 0 ; i < clickedCard.length ; i++){
-      clickedCard[i].clicked = false;
+    if (clicked.indexOf(id) === -1) {
+      this.handleScore();
+      this.setState({ clickedCards: clicked.concat(id) });
     }
-
-    this.setState({cards})
-    this.setState({score: 0})
-    this.setState({clickedCards: clickedCard})
-    
-  } else if (this.state.score < 11) {
-    
-      clickedCard.clicked = true;
-      
-      this.setState({score: this.state.score + 1})
-
-      if (this.state.score > this.state.highscore) {
-        this.setState({ highscore: this.state.score })
-      }
-
-      clickedCard.sort((a, b) => 0.5 - Math.random());
-      this.setState({ clickedCards: clickedCard })
+    else {
+      // this.resetScore();
     }
-   
   }
+
+  handleScore = () => {
+    const newScore = this.state.score + 1;
+    this.setState({ 
+      score: newScore,
+      gameMessage: "" 
+    })
+  }
+ 
+  // Shuffle = cards.sort(() => 0.5 - Math.random());
 
   render() {
     return (
