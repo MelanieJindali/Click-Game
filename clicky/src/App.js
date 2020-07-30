@@ -42,11 +42,11 @@ class App extends Component {
   resetScore = () => {
     this.setState({
       score: 0,
-      highscore: 0,
+      highscore: this.state.highscore,
       gameMessage: "You lost! Click an image to try again.",
       clickedCards: []
     });
-
+    this.shuffleCards()
   }
  
   shuffleCards = () => {
@@ -57,8 +57,7 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Header score={this.state.score} highscore={this.state.highscore}/>
-        <h4>{this.gameMessage}</h4>
+        <Header score={this.state.score} highscore={this.state.highscore} gameMessage={this.state.gameMessage}/>
           {this.state.cards.map(card => (
             <Card 
               handleClick={this.handleClick}
