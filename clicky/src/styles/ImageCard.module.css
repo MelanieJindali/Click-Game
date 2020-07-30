@@ -6,7 +6,7 @@
 
 .card {
   margin-top: 50px;
-  max-width: 120px ;
+  max-height: 150px ;
   flex-direction: row;
   justify-content: center;
 }

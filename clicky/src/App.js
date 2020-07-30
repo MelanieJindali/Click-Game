@@ -19,10 +19,9 @@ class App extends Component {
     if (clicked.indexOf(id) === -1) {
       this.handleScore();
       this.setState({ clickedCards: clicked.concat(id) });
-    }
-    else {
-      // this.resetScore();
-    }
+    } else {
+      this.resetScore();
+      }
   }
 
   handleScore = () => {
@@ -30,20 +29,44 @@ class App extends Component {
     this.setState({ 
       score: newScore,
       gameMessage: "" 
-    })
+    });
+
+    if (newScore >= this.state.highscore) {
+      this.setState({ highscore: newScore });
+    } else if (newScore === 12) {
+      this.setState({ gameMessage: "We have a winner!" });
+    }
+    this.shuffleCards();
+  }
+
+  resetScore = () => {
+    this.setState({
+      score: 0,
+      highscore: 0,
+      gameMessage: "You lost! Click an image to try again.",
+      clickedCards: []
+    });
+
   }
  
-  // Shuffle = cards.sort(() => 0.5 - Math.random());
+  shuffleCards = () => {
+    cards.sort(() => 0.5 - Math.random());
+  }
+
 
   render() {
     return (
       <Wrapper>
         <Header score={this.state.score} highscore={this.state.highscore}/>
+        <h4>{this.gameMessage}</h4>
           {this.state.cards.map(card => (
             <Card 
               handleClick={this.handleClick}
+              handleScore={this.handleScore}
+              shuffle={this.shuffleCards}
               list={cards}
               key={card.id} 
+              id={card.id} 
               image={card.image} 
           />
           ))}
